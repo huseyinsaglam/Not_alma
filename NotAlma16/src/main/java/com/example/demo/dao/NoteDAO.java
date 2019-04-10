@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 import javax.persistence.Query;
 
+import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -17,6 +18,12 @@ public class NoteDAO {
 	@Autowired
 	private SessionFactory sessionFactory;
 	
+//	SessionFactory :
+//		SessionFactory derlenmiþ basit bir veri tabaný adreslemelerinin tutulduðu alan olarak tanýmlanabilir.
+//
+//		Session :
+//		Uygulama ve kalýcý veriler arasýnda ki tek iþ parçacýklý kýsa süreli bir görüþmeyi temsil eder.
+	
 	
 	// getCurrentSession : mevcut session üzerinde iþlem yapar..iþlem kapsamýna baglýdýr.
 	// iþlem bittiginde oturumu otomatik olarak siler ve kapatýr, böylece harici olarak yapmanýz gerekmez..
@@ -29,6 +36,7 @@ public class NoteDAO {
 	public void uptade(Note note)
 	{
 		sessionFactory.getCurrentSession().update(note);
+		
 		
 	}
 	

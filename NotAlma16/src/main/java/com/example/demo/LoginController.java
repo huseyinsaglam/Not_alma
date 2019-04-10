@@ -81,8 +81,10 @@ public class LoginController {
 	{
 		User userm =	userService.getfindByUsernameAndPass(user);
 		
-		if(userm != null)
+		if(userm != null) 
 		{
+			request.getSession().setAttribute("user", userm); //Requestte istek attým istegin üzerinde session duruyor,
+															  // bu session'ý addribute set ediyorum..
 			return new ResponseEntity<>("OK",HttpStatus.OK);
 		}
 	    return new ResponseEntity<>("ERROR",HttpStatus.OK);

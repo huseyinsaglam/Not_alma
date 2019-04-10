@@ -21,7 +21,7 @@ public class MailService {
 		email.setFrom("betonhs001@gmail.com");
 		email.setTo(mail);
 		email.setSubject("Uyeligi tamamla");
-		email.setText("Uyeligi tamamlamak icin asagýdaki linke tiklayiniz. \n \n"+HomeController.url+"/reg/" +key);
+	  email.setText("Uyeligi tamamlamak icin asagýdaki linke tiklayiniz. \n \n"+HomeController.url+"/reg/" +key);
 		//email.setText("Uyeligi tamamlamak icin asagýdaki linke tiklayiniz.");
 	    mailSender.send(email);
 	}

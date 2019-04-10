@@ -74,8 +74,8 @@ public class UserService {
 		User user =userDAO.getfindByKey(key);
 		if( user != null)
 			{
-			user.setActive(true);
-			uptade(user);
+			  user.setActive(true);
+			  uptade(user);
 			 	return true;
 			}
 		else

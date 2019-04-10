@@ -30,7 +30,7 @@ import com.example.demo.service.NoteService;
 @Controller
 public class HomeController {
 	 
-	public static String url = "http://localhost:8080/NotAlma";
+	 public static String url = "http://localhost:8080/NotAlma";
 	
 	@Autowired
     private NoteService noteService;
@@ -57,11 +57,11 @@ public class HomeController {
 	
 	@RequestMapping(value = "/index", method = RequestMethod.GET)
 	public String index(Model model , HttpServletRequest req) {
-
+		
+		model.addAttribute("user", req.getSession().getAttribute("user")); //requestin üzerinde session aldým model attribute
+																		   // user aldým
 		System.out.println(req.getRemoteAddr());
 		model.addAttribute("baslik", "Not alma Web Sitesi");
-		String message="huseyin_saglam";
-		model.addAttribute("serverTime", message );
 		
 		model.addAttribute("notlar", noteService.getAll(1l));
 		return "index";
