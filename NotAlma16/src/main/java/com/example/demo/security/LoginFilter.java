@@ -50,7 +50,7 @@ public class LoginFilter implements Filter {
 			res.sendRedirect("login");
 		}
 
-		 chain.doFilter(request, response); // istedigi yerde filtlemeyi yapýp girebilsin
+		 //chain.doFilter(request, response); // istedigi yerde filtlemeyi yapýp girebilsin
 	}
 
 	public void init(FilterConfig fConfig) throws ServletException {
