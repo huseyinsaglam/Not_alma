@@ -11,6 +11,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.example.demo.dao.NoteDAO;
 import com.example.demo.entity.Note;
+import com.example.demo.security.LoginFilter;
 
 @Service
 @Transactional
@@ -29,7 +30,7 @@ public class NoteService {
 	public Long createNote(Note note, HttpServletRequest request)
 	{
 		// user id sonra degistir..
-		note.setUser_id(1l);
+		note.setUser_id(LoginFilter.user.getId());
 		return noteDAO.insert(note);
 	}
 	

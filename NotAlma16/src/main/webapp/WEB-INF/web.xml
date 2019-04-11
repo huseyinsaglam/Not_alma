@@ -40,8 +40,8 @@
     <error-code>404</error-code>
     <location>/error_404</location>
   </error-page>
+  
   <filter>
-    <display-name>LoginFilter</display-name>
     <filter-name>LoginFilter</filter-name>
     <filter-class>com.example.demo.security.LoginFilter</filter-class>
   </filter>

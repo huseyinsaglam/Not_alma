@@ -50,12 +50,11 @@
 				<img src="asset/images/person1.jpg" alt="Free HTML5 Bootstrap Template" class="img-responsive">
 			</figure>
 			<h3 class="heading">Hakkimda</h3>
-			<h2>${user.name} ${user.surname}</h2>
+			<h2>${user.name} ${user.surname}</h2> 
 			<p>Bilgisayar Muhendisiyim. Web uygulama gelistirmekteyim.</p>
 			<ul class="fh5co-social">
-				<li><a href="#"><i class="icon-twitter"></i></a></li>
-				<li><a href="#"><i class="icon-facebook"></i></a></li>
-				<li><a href="#"><i class="icon-instagram"></i></a></li>
+				<li><a href="logout">Cikis</a></li>
+
 			</ul>
 		</div>
 

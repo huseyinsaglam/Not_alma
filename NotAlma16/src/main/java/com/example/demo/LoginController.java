@@ -50,9 +50,16 @@ public class LoginController {
 	
 	
 	@RequestMapping(value = "/register", method = RequestMethod.GET)
-	public String register(Model model) {
+	public String register(Model model ) {
 
+		
 		return "register";
+	}
+	
+	@RequestMapping(value = "/logout", method = RequestMethod.GET)
+	public String logout(Model model, HttpServletRequest request) {
+		request.getSession().getAttribute(null);
+		return "redirect:/login";
 	}
 	
 

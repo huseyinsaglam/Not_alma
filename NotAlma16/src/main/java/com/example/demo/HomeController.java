@@ -24,6 +24,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.example.demo.entity.Note;
+import com.example.demo.security.LoginFilter;
 import com.example.demo.service.MailService;
 import com.example.demo.service.NoteService;
 
@@ -125,7 +126,7 @@ public class HomeController {
 	public ResponseEntity<ArrayList<Note>> getNotes( HttpServletRequest request)
 	{
 		
-		return new ResponseEntity<>(noteService.getAll(1l),HttpStatus.CREATED);
+		return new ResponseEntity<>(noteService.getAll(LoginFilter.user.getId()),HttpStatus.CREATED);
 	}
 	
 	@RequestMapping(value="/getNote", method=RequestMethod.POST)
