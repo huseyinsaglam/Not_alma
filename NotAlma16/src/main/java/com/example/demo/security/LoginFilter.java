@@ -41,6 +41,13 @@ public class LoginFilter implements Filter {
 		}
 		
 		
+		if(req.getRequestURI().contains("rest")) // icerisinde rest geçiyorsa 
+		{
+			 chain.doFilter(request, response); // istedigi yerde filtlemeyi yapýp girebilsin
+			 return;
+		}
+		
+		
 		if(req.getRequestURI().contains("register")) // icerisinde login geçiyorsa 
 		{
 			 chain.doFilter(request, response); // istedigi yerde filtlemeyi yapýp girebilsin

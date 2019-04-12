@@ -10,7 +10,9 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.example.demo.dao.NoteDAO;
+import com.example.demo.dataTransferobject.UserLoginDTO;
 import com.example.demo.entity.Note;
+import com.example.demo.entity.User;
 import com.example.demo.security.LoginFilter;
 
 @Service
@@ -19,6 +21,9 @@ public class NoteService {
 	
 	@Autowired
 	private NoteDAO noteDAO;
+	
+	@Autowired
+	private UserService userService;
 
 	
 //	public Long createNote(Note note)
@@ -65,6 +70,17 @@ public class NoteService {
 	{
 		return noteDAO.getAll(userId);
 	}
+	
+	public ArrayList<Note> getAll(UserLoginDTO login)
+	{
+		User userm = new User();
+		userm.setUsername(login.getUsername());
+		userm.setPass(login.getPassword());
+		
+		User user = userService.getfindByUsernameAndPass(userm);
+		return noteDAO.getAll(user.getId());
+	}
+
 
 	
 
